@@ -8,13 +8,13 @@ function PatientDashboard() {
 
   useEffect(() => {
     if (user?.role === 'patient') {
-      axios.get('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/patient/appointments')
+      axios.get('https://hospital-management-backend-ouw8mbu66-himashree56s-projects.vercel.app/api/patient/appointments')
         .then(res => setAppointments(res.data));
     }
   }, [user]);
 
   const handleCancel = async (id) => {
-    await axios.put(`https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/patient/cancel/${id}`);
+    await axios.put(`https://hospital-management-backend-ouw8mbu66-himashree56s-projects.vercel.app/api/patient/cancel/${id}`);
     setAppointments(appointments.map(a => a._id === id ? { ...a, status: 'cancelled' } : a));
   };
 

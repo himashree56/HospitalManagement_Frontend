@@ -12,14 +12,14 @@ function DoctorDashboard() {
 
   useEffect(() => {
     if (user?.role === 'doctor') {
-      axios.get('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/doctor/appointments').then(res => setAppointments(res.data));
-      axios.get('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/doctor/timeslots').then(res => setTimeSlots(res.data));
+      axios.get('https://hospital-management-backend-ouw8mbu66-himashree56s-projects.vercel.app/api/doctor/appointments').then(res => setAppointments(res.data));
+      axios.get('https://hospital-management-backend-ouw8mbu66-himashree56s-projects.vercel.app/api/doctor/timeslots').then(res => setTimeSlots(res.data));
     }
   }, [user]);
 
   const handleAddTimeSlot = async (e) => {
     e.preventDefault();
-    const res = await axios.post('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/doctor/timeslots', { date, startTime, endTime });
+    const res = await axios.post('https://hospital-management-backend-ouw8mbu66-himashree56s-projects.vercel.app/api/doctor/timeslots', { date, startTime, endTime });
     setTimeSlots([...timeSlots, res.data]);
   };
 

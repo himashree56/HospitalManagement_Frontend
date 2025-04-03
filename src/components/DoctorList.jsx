@@ -6,8 +6,8 @@ const DoctorList = () => {
 
   useEffect(() => {
     const url = specialization
-      ? `https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/doctors?specialization=${specialization}`
-      : 'https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/doctors';
+      ? `https://hospital-management-backend-ouw8mbu66-himashree56s-projects.vercel.app/api/doctors?specialization=${specialization}`
+      : 'https://hospital-management-backend-ouw8mbu66-himashree56s-projects.vercel.app/api/doctors';
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDoctors(data))

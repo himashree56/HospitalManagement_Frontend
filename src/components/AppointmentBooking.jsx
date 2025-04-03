@@ -8,7 +8,7 @@ const AppointmentBooking = () => {
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
-    fetch('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/appointments', {
+    fetch('https://hospital-management-backend-ouw8mbu66-himashree56s-projects.vercel.app/api/appointments', {
       headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
     })
       .then((res) => res.json())
@@ -19,7 +19,7 @@ const AppointmentBooking = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/appointments', {
+      const res = await fetch('https://hospital-management-backend-ouw8mbu66-himashree56s-projects.vercel.app/api/appointments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ const AppointmentBooking = () => {
 
   const handleCancel = async (id) => {
     try {
-      const res = await fetch(`https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/appointments/${id}`, {
+      const res = await fetch(`https://hospital-management-backend-ouw8mbu66-himashree56s-projects.vercel.app/api/appointments/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
       });

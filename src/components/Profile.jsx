@@ -8,7 +8,7 @@ const Profile = () => {
 
   const handleUpdate = async () => {
     try {
-      const res = await fetch('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/users/profile', {
+      const res = await fetch('https://hospital-management-backend-ouw8mbu66-himashree56s-projects.vercel.app/api/users/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
