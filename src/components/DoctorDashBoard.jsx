@@ -5,7 +5,7 @@ const DoctorDashboard = () => {
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
-    fetch('https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/doctors/appointments', {
+    fetch('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/doctors/appointments', {
       headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
     })
       .then((res) => res.json())

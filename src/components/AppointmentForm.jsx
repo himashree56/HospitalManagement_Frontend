@@ -23,7 +23,7 @@ function AppointmentForm({ doctor }) {
       setMessage('');
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get(`https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/patient/timeslots/${doctor._id}`, {
+        const res = await axios.get(`https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/patient/timeslots/${doctor._id}`, {
           headers: { 'x-auth-token': token },
         });
         console.log('Time slots response:', res.data);
@@ -58,7 +58,7 @@ function AppointmentForm({ doctor }) {
     try {
       const token = localStorage.getItem('token');
       const res = await axios.post(
-        'https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/patient/book',
+        'https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/patient/book',
         { timeSlotId: selectedTimeSlot },
         { headers: { 'x-auth-token': token } }
       );

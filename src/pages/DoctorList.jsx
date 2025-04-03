@@ -11,7 +11,7 @@ function DoctorList() {
     const fetchDoctors = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/patient/doctors', {
+        const res = await axios.get('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/patient/doctors', {
           headers: { 'x-auth-token': token },
         });
         console.log('Doctors fetched:', res.data); 

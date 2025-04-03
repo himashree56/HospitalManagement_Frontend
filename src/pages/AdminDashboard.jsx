@@ -9,13 +9,13 @@ function AdminDashboard() {
 
   useEffect(() => {
     if (user?.role === 'admin') {
-      axios.get('https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/admin/doctors').then(res => setDoctors(res.data));
-      axios.get('https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/admin/appointments').then(res => setAppointments(res.data));
+      axios.get('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/admin/doctors').then(res => setDoctors(res.data));
+      axios.get('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/admin/appointments').then(res => setAppointments(res.data));
     }
   }, [user]);
 
   const handleApprove = async (id) => {
-    await axios.put(`https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/admin/approve/${id}`);
+    await axios.put(`https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/admin/approve/${id}`);
     setDoctors(doctors.map(d => d._id === id ? { ...d, isApproved: true } : d));
   };
 

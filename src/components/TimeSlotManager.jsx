@@ -8,7 +8,7 @@ const TimeSlotManager = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/doctors/availability', {
+      const res = await fetch('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/doctors/availability', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

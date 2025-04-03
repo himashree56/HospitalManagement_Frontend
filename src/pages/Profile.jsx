@@ -9,7 +9,7 @@ function Profile() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/doctor/profile', { specialization, bio });
+    await axios.post('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/doctor/profile', { specialization, bio });
     alert('Profile updated');
   };
 

@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
     if (token) {
       axios.defaults.headers.common['x-auth-token'] = token;
       axios
-        .get('https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/auth/me')
+        .get('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/auth/me')
         .then((res) => setUser(res.data))
         .catch(() => localStorage.removeItem('token'))
         .finally(() => setLoading(false));
@@ -21,19 +21,19 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const res = await axios.post('https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/auth/login', { email, password });
+    const res = await axios.post('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/auth/login', { email, password });
     localStorage.setItem('token', res.data.token);
     axios.defaults.headers.common['x-auth-token'] = res.data.token;
-    const userData = await axios.get('https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/auth/me');
+    const userData = await axios.get('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/auth/me');
     setUser(userData.data);
     return userData.data.role; 
   };
 
   const register = async (name, email, password, role) => {
-    const res = await axios.post('https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/auth/register', { name, email, password, role });
+    const res = await axios.post('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/auth/register', { name, email, password, role });
     localStorage.setItem('token', res.data.token);
     axios.defaults.headers.common['x-auth-token'] = res.data.token;
-    const userData = await axios.get('https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/auth/me');
+    const userData = await axios.get('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/auth/me');
     setUser(userData.data);
     return userData.data.role; 
   };

@@ -8,12 +8,12 @@ const DoctorProfile = () => {
   const [availability, setAvailability] = useState([]);
 
   useEffect(() => {
-    fetch(`https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/doctors/${id}`)
+    fetch(`https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/doctors/${id}`)
       .then((res) => res.json())
       .then((data) => setDoctor(data))
       .catch((err) => console.error('Error fetching doctor:', err));
 
-    fetch(`https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/doctors/${id}/availability`)
+    fetch(`https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/doctors/${id}/availability`)
       .then((res) => res.json())
       .then((data) => setAvailability(data))
       .catch((err) => console.error('Error fetching availability:', err));

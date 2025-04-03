@@ -7,19 +7,19 @@ const AdminPanel = () => {
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
-    fetch('https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/doctors/pending', {
+    fetch('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/doctors/pending', {
       headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
     })
       .then((res) => res.json())
       .then((data) => setDoctors(data));
 
-    fetch('https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/users', {
+    fetch('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/users', {
       headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
     })
       .then((res) => res.json())
       .then((data) => setUsers(data));
 
-    fetch('https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/appointments/all', {
+    fetch('https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/appointments/all', {
       headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
     })
       .then((res) => res.json())
@@ -28,7 +28,7 @@ const AdminPanel = () => {
 
   const handleApprove = async (id) => {
     try {
-      const res = await fetch(`https://hospital-management-pe11f5ncz-himashree56s-projects.vercel.app/api/doctors/approve/${id}`, {
+      const res = await fetch(`https://hospital-management-backend-ijre8wlck-himashree56s-projects.vercel.app/api/doctors/approve/${id}`, {
         method: 'PUT',
         headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
       });
